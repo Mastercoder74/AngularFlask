@@ -23,31 +23,33 @@
       <input type="text" [(ngModel)]="inputString[i]">
       <br>
       <br>
-      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="radioOption1">
+      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="radioOption1[i]">
       <br>
-      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="radioOption2">
+      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="radioOption2[i]">
       <br>
-      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="radioOption3">
+      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="radioOption3[i]">
       <br>
-      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="radioOption4">
+      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="radioOption4[i]">
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Multi'">
       <input type="text" [(ngModel)]="inputString[i]">
       <br>
       <br>
-      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="multiOption1">
+      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="multiOption1[i]">
       <br>
-      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="multiOption2">
+      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="multiOption2[i]">
       <br>
-      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="multiOption3">
+      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="multiOption3[i]">
       <br>
-      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="multiOption4">
+      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="multiOption4[i]">
     </ng-container>
 
 
   </div>
 
   <h1>{{formArray | json}}</h1>
+
+  <h1>{{optionsArray | json}}</h1>
 
   <button (click)="onSubmit()">Submit</button>
 
