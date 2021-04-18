@@ -77,25 +77,33 @@
           <p>{{inputString[i]}}</p>
           <br>
           <br>
-          <label for="option1">{{radioOption1[i]}} </label><input type="radio" [(ngModel)]="radioOption1[i]">
+          <div *ngIf="radioOption1[i] != null">
+            <input type="radio" name="radioForm{{i}}" value="option1" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption1[i]}} </label>
+          </div>
           <br>
-          <label for="option1">{{radioOption2[i]}} </label><input type="radio" [(ngModel)]="radioOption2[i]">
+          <div *ngIf="radioOption2[i] != null">
+            <input type="radio" name="radioForm{{i}}" value="option2" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption2[i]}} </label>
+          </div>
           <br>
-          <label for="option1">{{radioOption3[i]}} </label><input type="radio" [(ngModel)]="radioOption3[i]">
+          <div *ngIf="radioOption3[i] != null">
+            <input type="radio" name="radioForm{{i}}" value="option3" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption3[i]}} </label>
+          </div>
           <br>
-          <label for="option1">{{radioOption4[i]}} </label><input type="radio" [(ngModel)]="radioOption4[i]">
+          <div *ngIf="radioOption4[i] != null">
+            <input type="radio" name="radioForm{{i}}" value="option4" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption4[i]}} </label>
+          </div>
         </ng-container>
         <ng-container *ngIf="questionType[i] === 'Multi'">
           <p>{{inputString[i]}}</p>
           <br>
           <br>
-          <label for="option1">{{multiOption1[i]}} </label><input type="text" [(ngModel)]="multiOption1[i]">
+          <label for="option1">{{multiOption1[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
           <br>
-          <label for="option1">{{multiOption2[i]}} </label><input type="text" [(ngModel)]="multiOption2[i]">
+          <label for="option2">{{multiOption2[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
           <br>
-          <label for="option1">{{multiOption3[i]}} </label><input type="text" [(ngModel)]="multiOption3[i]">
+          <label for="option3">{{multiOption3[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
           <br>
-          <label for="option1">{{multiOption4[i]}} </label><input type="text" [(ngModel)]="multiOption4[i]">
+          <label for="option4">{{multiOption4[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
         </ng-container>
 
 
