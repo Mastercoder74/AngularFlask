@@ -130,9 +130,8 @@ export class LandingPageComponent implements OnInit {
 
     this.http.post(url,{
 
-      "name": "Sriharish",
-      "email": "sriharish74@gmail.com",
-      "pwd": "sh123"
+      formArray : this.formArray,
+      optionsArray : this.optionsArray,
 
     }).toPromise().then(() => {
 
