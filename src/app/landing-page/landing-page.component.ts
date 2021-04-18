@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -30,7 +31,7 @@ export class LandingPageComponent implements OnInit {
   formArray: Array<string>;
   optionsArray: Array<string>;
 
-  constructor()
+  constructor(private router: Router,)
   {
     this.formArray = [];
     this.optionsArray = [];
@@ -115,6 +116,8 @@ export class LandingPageComponent implements OnInit {
     }
 
     this.showForm = true;
+
+    this.router.navigate(['/forms']);
 
   }
 
