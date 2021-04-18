@@ -9,13 +9,19 @@ export class LandingPageComponent implements OnInit {
 
   showShort: boolean = false;
 
+  tempString: string;
+
   num = 5;
 
-  constructor() { }
+  shortArray: Array<string>;
 
-  showShortAnswer()
-  {
-    this.showShort = true;
+  constructor() {
+    this.shortArray = [];
+    this.tempString = "";
+   }
+
+  addShort() {
+    this.shortArray.push(this.tempString);
   }
 
   ngOnInit(): void {

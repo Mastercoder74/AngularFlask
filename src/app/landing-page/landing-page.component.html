@@ -3,14 +3,14 @@
     <p>FORM BUILDER</p>
   </div>
   <div class="mid">
-    <button (click)="showShortAnswer()" class="button">Short Answer</button>
+    <button (click)="addShort()" class="button">Short Answer</button>
     <button class="button">Long Answer</button>
     <button class="button">Radio</button>
     <button class="button">Multi-Select</button>
   </div>
-  <ng-container *ngIf="showShort">
-    <ng-container *ngFor="nums in num">
-      <input type="text">
-    </ng-container>
-  </ng-container>
+
+  <div *ngFor="short of shortArray">
+      <input type="text" [(ngModel)]="tempString">
+  </div>
+
 </div>
