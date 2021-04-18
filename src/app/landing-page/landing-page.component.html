@@ -12,9 +12,11 @@
   <div *ngFor="item of formArray, let i = index" class="questionBox">
     <p>{{questionType[i]}} Question</p>
     <label for="shortAnswers">Question {{i + 1}}: </label>
-    <input type="text" [(ngModel)]="tempString">
+    <input type="text" [(ngModel)]="inputString[i]">
   </div>
 
-  <button>Submit</button>
+  <h1>{{formArray | json}}</h1>
+
+  <button (click)="onSubmit()">Submit</button>
 
 </div>
