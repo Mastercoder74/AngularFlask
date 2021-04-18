@@ -4,13 +4,17 @@
   </div>
   <div class="mid">
     <button (click)="addShort()" class="button">Short Answer</button>
-    <button class="button">Long Answer</button>
+    <button (click)="addLong()" class="button">Long Answer</button>
     <button class="button">Radio</button>
     <button class="button">Multi-Select</button>
   </div>
 
-  <div *ngFor="short of shortArray">
-      <input type="text" [(ngModel)]="tempString">
+  <div *ngFor="item of formArray, let i = index" class="questionBox">
+    <p>{{questionType[i]}} Question</p>
+    <label for="shortAnswers">Question {{i + 1}}: </label>
+    <input type="text" [(ngModel)]="tempString">
   </div>
+
+  <button>Submit</button>
 
 </div>

@@ -10,18 +10,34 @@ export class LandingPageComponent implements OnInit {
   showShort: boolean = false;
 
   tempString: string;
+  iValue: number;
 
   num = 5;
 
-  shortArray: Array<string>;
+  formArray: Array<string>;
 
-  constructor() {
-    this.shortArray = [];
+  constructor()
+  {
+    this.formArray = [];
     this.tempString = "";
-   }
+    this.questionType = [];
+    this.iValue = 0;
+  }
 
-  addShort() {
-    this.shortArray.push(this.tempString);
+  questionType: string[];
+
+  addShort()
+  {
+    this.questionType[this.iValue] = "Short"
+    this.formArray.push(this.tempString);
+    this.iValue++;
+  }
+
+  addLong()
+  {
+    this.questionType[this.iValue] = "Long"
+    this.formArray.push(this.tempString);
+    this.iValue++;
   }
 
   ngOnInit(): void {
