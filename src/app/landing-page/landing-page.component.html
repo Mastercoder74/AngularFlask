@@ -3,10 +3,10 @@
     <p>FORM BUILDER</p>
   </div>
   <div class="mid">
-    <button (click)="addShort()" class="button">Short Answer</button>
-    <button (click)="addLong()" class="button">Long Answer</button>
-    <button (click)="addRadio()" class="button">Radio</button>
-    <button (click)="addMulti()" class="button">Multi-Select</button>
+    <button (click)="addShort()" (click)="finishButton()" class="button">Short Answer</button>
+    <button (click)="addLong()" (click)="finishButton()" class="button">Long Answer</button>
+    <button (click)="addRadio()" (click)="finishButton()" class="button">Radio</button>
+    <button (click)="addMulti()" (click)="finishButton()" class="button">Multi-Select</button>
   </div>
 
   <div *ngFor="item of formArray, let i = index" class="questionBox">
@@ -17,7 +17,7 @@
       <input type="text" [(ngModel)]="inputString[i]">
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Long'">
-      <textarea type="text" [(ngModel)]="inputString[i]"></textarea>
+      <input type="text" [(ngModel)]="inputString[i]">
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Radio'">
       <input type="text" [(ngModel)]="inputString[i]">
@@ -47,10 +47,60 @@
 
   </div>
 
-  <h1>{{formArray | json}}</h1>
+  <!-- <h1>{{formArray | json}}</h1>
 
-  <h1>{{optionsArray | json}}</h1>
+  <h1>{{optionsArray | json}}</h1> -->
 
-  <button (click)="onSubmit()">Submit</button>
+  <ng-container *ngIf="showFinishButton">
+    <div class="mid">
+      <button (click)="onSubmit()" class="submit-button">Finish Form</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showForm">
+    <div class="mid">
+      <h1>FORM</h1>
+
+      <div *ngFor="item of formArray, let i = index" class="questionBox">
+        <p>{{questionType[i]}} Question</p>
+        <label for="shortAnswers">Question {{i + 1}}: </label>
+
+        <ng-container *ngIf="questionType[i] === 'Short'">
+          <p>{{inputString[i]}}</p>
+          <input type="text" [(ngModel)]="answerString[i]">
+        </ng-container>
+        <ng-container *ngIf="questionType[i] === 'Long'">
+          <p>{{inputString[i]}}</p>
+          <textarea type="text" [(ngModel)]="answerString[i]"></textarea>
+        </ng-container>
+        <ng-container *ngIf="questionType[i] === 'Radio'">
+          <p>{{inputString[i]}}</p>
+          <br>
+          <br>
+          <label for="option1">{{radioOption1[i]}} </label><input type="radio" [(ngModel)]="radioOption1[i]">
+          <br>
+          <label for="option1">{{radioOption2[i]}} </label><input type="radio" [(ngModel)]="radioOption2[i]">
+          <br>
+          <label for="option1">{{radioOption3[i]}} </label><input type="radio" [(ngModel)]="radioOption3[i]">
+          <br>
+          <label for="option1">{{radioOption4[i]}} </label><input type="radio" [(ngModel)]="radioOption4[i]">
+        </ng-container>
+        <ng-container *ngIf="questionType[i] === 'Multi'">
+          <p>{{inputString[i]}}</p>
+          <br>
+          <br>
+          <label for="option1">{{multiOption1[i]}} </label><input type="text" [(ngModel)]="multiOption1[i]">
+          <br>
+          <label for="option1">{{multiOption2[i]}} </label><input type="text" [(ngModel)]="multiOption2[i]">
+          <br>
+          <label for="option1">{{multiOption3[i]}} </label><input type="text" [(ngModel)]="multiOption3[i]">
+          <br>
+          <label for="option1">{{multiOption4[i]}} </label><input type="text" [(ngModel)]="multiOption4[i]">
+        </ng-container>
+
+
+      </div>
+    </div>
+  </ng-container>
 
 </div>

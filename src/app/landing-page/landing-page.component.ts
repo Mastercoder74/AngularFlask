@@ -11,6 +11,8 @@ export class LandingPageComponent implements OnInit {
 
   inputString: string[];
 
+  answerString: string[];
+
   radioOption1: string[];
   radioOption2: string[];
   radioOption3: string[];
@@ -33,6 +35,7 @@ export class LandingPageComponent implements OnInit {
     this.formArray = [];
     this.optionsArray = [];
     this.inputString = [];
+    this.answerString = [];
     this.questionType = [];
     this.iValue = 0;
 
@@ -48,6 +51,14 @@ export class LandingPageComponent implements OnInit {
   }
 
   questionType: string[];
+
+  showFinishButton: boolean = false;
+  showForm: boolean = false;
+
+  finishButton()
+  {
+    this.showFinishButton = true;
+  }
 
   addShort()
   {
@@ -102,6 +113,8 @@ export class LandingPageComponent implements OnInit {
         this.optionsArray.push(this.multiOption4[i])
 
     }
+
+    this.showForm = true;
 
   }
 
