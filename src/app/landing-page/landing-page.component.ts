@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -31,7 +32,7 @@ export class LandingPageComponent implements OnInit {
   formArray: Array<string>;
   optionsArray: Array<string>;
 
-  constructor(private router: Router,)
+  constructor(private router: Router, private http:HttpClient,)
   {
     this.formArray = [];
     this.optionsArray = [];
@@ -117,8 +118,25 @@ export class LandingPageComponent implements OnInit {
 
     this.showForm = true;
 
+    this.save();
+
     this.router.navigate(['/forms']);
 
+  }
+
+  save()
+  {
+    let url = 'http://127.0.0.1:5000/add';
+
+    this.http.post(url,{
+
+      "name": "Sriharish",
+      "email": "sriharish74@gmail.com",
+      "pwd": "sh123"
+
+    }).toPromise().then(() => {
+
+    })
   }
 
   ngOnInit(): void {
