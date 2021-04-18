@@ -97,13 +97,12 @@
           <p>{{inputString[i]}}</p>
           <br>
           <br>
-          <label for="option1">{{multiOption1[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
-          <br>
-          <label for="option2">{{multiOption2[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
-          <br>
-          <label for="option3">{{multiOption3[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
-          <br>
-          <label for="option4">{{multiOption4[i]}} </label><input type="text" [(ngModel)]="answerString[i]">
+          <select [(ngModel)]="answerString[i]" multiple>
+            <option value="{{multiOption1[i]}}">{{multiOption1[i]}}</option>
+            <option value="{{multiOption2[i]}}">{{multiOption2[i]}}</option>
+            <option value="{{multiOption3[i]}}">{{multiOption3[i]}}</option>
+            <option value="{{multiOption4[i]}}">{{multiOption4[i]}}</option>
+          </select>
         </ng-container>
 
 
