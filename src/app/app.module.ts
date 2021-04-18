@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { FormsModule } from '@angular/forms';
+import { FormsListComponent } from './forms-list/forms-list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    FormsListComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
