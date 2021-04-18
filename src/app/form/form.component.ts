@@ -7,7 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  formArray: Array<string>;
+  optionsArray: Array<string>;
+
+  inputString: string[];
+
+  answerString: string[];
+
+  radioOption1: string[];
+  radioOption2: string[];
+  radioOption3: string[];
+  radioOption4: string[];
+
+  multiOption1:string[];
+  multiOption2:string[];
+  multiOption3:string[];
+  multiOption4:string[];
+
+  questionType: string[];
+
+  iValue: number;
+
+  constructor()
+  {
+    this.formArray = [];
+    this.optionsArray = [];
+    this.inputString = [];
+    this.answerString = [];
+    this.questionType = [];
+    this.iValue = 0;
+
+    this.radioOption1 = [];
+    this.radioOption2 = [];
+    this.radioOption3 = [];
+    this.radioOption4 = [];
+
+    this.multiOption1 = [];
+    this.multiOption2 = [];
+    this.multiOption3 = [];
+    this.multiOption4 = [];
+  }
 
   ngOnInit(): void {
   }
