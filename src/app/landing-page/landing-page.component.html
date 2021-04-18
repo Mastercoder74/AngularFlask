@@ -5,14 +5,46 @@
   <div class="mid">
     <button (click)="addShort()" class="button">Short Answer</button>
     <button (click)="addLong()" class="button">Long Answer</button>
-    <button class="button">Radio</button>
-    <button class="button">Multi-Select</button>
+    <button (click)="addRadio()" class="button">Radio</button>
+    <button (click)="addMulti()" class="button">Multi-Select</button>
   </div>
 
   <div *ngFor="item of formArray, let i = index" class="questionBox">
     <p>{{questionType[i]}} Question</p>
     <label for="shortAnswers">Question {{i + 1}}: </label>
-    <input type="text" [(ngModel)]="inputString[i]">
+
+    <ng-container *ngIf="questionType[i] === 'Short'">
+      <input type="text" [(ngModel)]="inputString[i]">
+    </ng-container>
+    <ng-container *ngIf="questionType[i] === 'Long'">
+      <textarea type="text" [(ngModel)]="inputString[i]"></textarea>
+    </ng-container>
+    <ng-container *ngIf="questionType[i] === 'Radio'">
+      <input type="text" [(ngModel)]="inputString[i]">
+      <br>
+      <br>
+      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="radioOption1">
+      <br>
+      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="radioOption2">
+      <br>
+      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="radioOption3">
+      <br>
+      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="radioOption4">
+    </ng-container>
+    <ng-container *ngIf="questionType[i] === 'Multi'">
+      <input type="text" [(ngModel)]="inputString[i]">
+      <br>
+      <br>
+      <label for="option1">Option 1: </label><input type="text" [(ngModel)]="multiOption1">
+      <br>
+      <label for="option1">Option 2: </label><input type="text" [(ngModel)]="multiOption2">
+      <br>
+      <label for="option1">Option 3: </label><input type="text" [(ngModel)]="multiOption3">
+      <br>
+      <label for="option1">Option 4: </label><input type="text" [(ngModel)]="multiOption4">
+    </ng-container>
+
+
   </div>
 
   <h1>{{formArray | json}}</h1>
