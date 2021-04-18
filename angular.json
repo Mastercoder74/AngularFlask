@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "AngularFlask"
+  "defaultProject": "AngularFlask",
+  "cli": {
+    "analytics": "9f9b9895-772e-4ec6-8829-49145b668614"
+  }
 }

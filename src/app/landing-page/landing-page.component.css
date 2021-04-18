@@ -1,0 +1,19 @@
+.mid
+{
+  text-align: center;
+}
+.form-builder
+{
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.button {
+  background-color: #2fb10e;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
