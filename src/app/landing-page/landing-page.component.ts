@@ -132,6 +132,18 @@ export class LandingPageComponent implements OnInit {
 
       formArray : this.formArray,
       optionsArray : this.optionsArray,
+      inputString : this.inputString,
+      questionType : this.questionType,
+
+      radioOption1 : this.radioOption1,
+      radioOption2 : this.radioOption2,
+      radioOption3 : this.radioOption3,
+      radioOption4 : this.radioOption4,
+
+      multiOption1 : this.multiOption1,
+      multiOption2 : this.multiOption2,
+      multiOption3 : this.multiOption3,
+      multiOption4 : this.multiOption4
 
     }).toPromise().then(() => {
 
