@@ -2,44 +2,27 @@
 {
   text-align: center;
 }
-.form-builder
+.welcome-text
 {
   font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.button {
-  background-color: #2fb10e;
-  color: white;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.submit-button {
-  margin-top: 20px;
-  background-color: #2643e7;
-  color: white;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.questionBox
+.big-btn
 {
+  background-color: #2fb10e;
+  color: rgb(12, 71, 1);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+  padding: 10px 25px;
+  min-width: 60%;
+  min-height: 150px;
+  max-width: 60%;
+  max-height: 150px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.082);
-  margin-left: 15%;
-  margin-right: 15%;
-  padding-top: 2px;
-  padding-bottom: 10px;
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: rgb(0, 0, 0);
+  font-size: 3vw;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

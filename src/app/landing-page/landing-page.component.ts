@@ -9,11 +9,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
 
-
-
-  constructor()
+  constructor(private router: Router,)
   {
 
+  }
+
+  redirectToFormBuilder()
+  {
+    this.router.navigate(['/build']);
+  }
+  redirectToFormsList()
+  {
+    this.router.navigate(['/forms']);
+  }
+  redirectToEnquiries()
+  {
+    this.router.navigate(['/enquiries']);
   }
 
   ngOnInit(): void {
