@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -32,7 +32,7 @@ export class LandingPageComponent implements OnInit {
   formArray: Array<string>;
   optionsArray: Array<string>;
 
-  constructor(private router: Router, private http:HttpClient,)
+  constructor(private router: Router, private http:HttpClient, private route: ActivatedRoute,)
   {
     this.formArray = [];
     this.optionsArray = [];
@@ -50,6 +50,8 @@ export class LandingPageComponent implements OnInit {
     this.multiOption2 = [];
     this.multiOption3 = [];
     this.multiOption4 = [];
+
+    this.id = '';
   }
 
   questionType: string[];
@@ -126,31 +128,112 @@ export class LandingPageComponent implements OnInit {
 
   save()
   {
-    let url = 'http://127.0.0.1:5000/add';
+    if(this.updateMode)
+    {
+      let url = 'http://127.0.0.1:5000/update/' + this.id;
 
-    this.http.post(url,{
+      this.http.put(url,{
 
-      formArray : this.formArray,
-      optionsArray : this.optionsArray,
-      inputString : this.inputString,
-      questionType : this.questionType,
+        formArray : this.formArray,
+        optionsArray : this.optionsArray,
+        inputString : this.inputString,
+        questionType : this.questionType,
 
-      radioOption1 : this.radioOption1,
-      radioOption2 : this.radioOption2,
-      radioOption3 : this.radioOption3,
-      radioOption4 : this.radioOption4,
+        radioOption1 : this.radioOption1,
+        radioOption2 : this.radioOption2,
+        radioOption3 : this.radioOption3,
+        radioOption4 : this.radioOption4,
 
-      multiOption1 : this.multiOption1,
-      multiOption2 : this.multiOption2,
-      multiOption3 : this.multiOption3,
-      multiOption4 : this.multiOption4
+        multiOption1 : this.multiOption1,
+        multiOption2 : this.multiOption2,
+        multiOption3 : this.multiOption3,
+        multiOption4 : this.multiOption4
 
-    }).toPromise().then(() => {
+      }).toPromise().then(() => {
 
-    })
+      })
+    }
+    else
+    {
+      let url = 'http://127.0.0.1:5000/add';
+
+      this.http.post(url,{
+
+        formArray : this.formArray,
+        optionsArray : this.optionsArray,
+        inputString : this.inputString,
+        questionType : this.questionType,
+
+        radioOption1 : this.radioOption1,
+        radioOption2 : this.radioOption2,
+        radioOption3 : this.radioOption3,
+        radioOption4 : this.radioOption4,
+
+        multiOption1 : this.multiOption1,
+        multiOption2 : this.multiOption2,
+        multiOption3 : this.multiOption3,
+        multiOption4 : this.multiOption4
+
+      }).toPromise().then(() => {
+
+      })
+    }
+  }
+
+  id: string;
+
+  dataStorage: any;
+
+  updateMode: boolean = false;
+
+  getFormData()
+  {
+    this.id = this.route.snapshot.params['id'];
+
+    if(this.id != null)
+    {
+      this.updateMode = true;
+    }
+
+    if(this.updateMode)
+    {
+      let url = 'http://127.0.0.1:5000/user/' + this.id;
+
+      this.http.get(url,{
+
+      }).toPromise().then((data) => {
+
+        var dataInfo = JSON.parse(JSON.stringify(data));
+
+        this.dataStorage = data;
+
+        this.formArray = dataInfo.formArray
+
+        this.optionsArray = dataInfo.optionsArray;
+        this.inputString = dataInfo.inputString;
+        this.questionType = dataInfo.questionType;
+
+        this.radioOption1 = dataInfo.radioOption1;
+        this.radioOption2 = dataInfo.radioOption2;
+        this.radioOption3 = dataInfo.radioOption3;
+        this.radioOption4 = dataInfo.radioOption4;
+
+        this.multiOption1 = dataInfo.multiOption1;
+        this.multiOption2 = dataInfo.multiOption2;
+        this.multiOption3 = dataInfo.multiOption3;
+        this.multiOption4 = dataInfo.multiOption4;
+
+      })
+    }
   }
 
   ngOnInit(): void {
+    this.getFormData();
+
+    if(this.updateMode)
+    {
+      this.showFinishButton = true;
+    }
   }
 
 }
