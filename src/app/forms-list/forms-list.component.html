@@ -1,3 +1,14 @@
 <div class="mid form-builder">
   <p>FORMS LIST</p>
 </div>
+
+<div>
+<table class="mid main-table center">
+  <th>Form Number</th>
+  <th>MongoDB ID</th>
+  <tr *ngFor="let data of dataStorage, let i = index">
+    <td>{{i+1}}</td>
+    <td>{{data._id.$oid}}</td>
+  </tr>
+</table>
+</div>

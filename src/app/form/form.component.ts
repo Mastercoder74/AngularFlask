@@ -48,6 +48,11 @@ export class FormComponent implements OnInit {
     this.multiOption4 = [];
   }
 
+  getFormData()
+  {
+
+  }
+
   ngOnInit(): void {
   }
 
