@@ -73,6 +73,8 @@ export class FormsListComponent implements OnInit {
 
     this.getFormsList();
 
+    this.reloadData();
+
   }
 
 }
