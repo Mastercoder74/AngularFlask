@@ -33,7 +33,7 @@ export class FormsListComponent implements OnInit {
 
   redirectToForm(id: string)
   {
-    this.router.navigate(['/home', id]);
+    this.router.navigate(['/build', id]);
   }
 
   reloadData()

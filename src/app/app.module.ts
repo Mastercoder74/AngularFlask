@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { FormsListComponent } from './forms-list/forms-list.component';
 import { FormComponent } from './form/form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     FormsListComponent,
-    FormComponent
+    FormComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,
