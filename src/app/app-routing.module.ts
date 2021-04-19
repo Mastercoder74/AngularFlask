@@ -9,6 +9,7 @@ const routes: Routes = [
 
   {path: 'form/:id', component: FormComponent },
   {path: 'home', component: LandingPageComponent},
+  {path: 'home/:id', component: LandingPageComponent},
   {path: 'forms', component: FormsListComponent},
 ];
 

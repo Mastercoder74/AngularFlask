@@ -1,0 +1,17 @@
+.questionBox
+{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.082);
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+}
+.mid
+{
+  text-align: center;
+}
