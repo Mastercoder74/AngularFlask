@@ -18,19 +18,19 @@
         <br>
         <br>
         <div *ngIf="radioOption1[i] != null">
-          <input type="radio" name="radioForm{{i}}" value="option1" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption1[i]}} </label>
+          <input type="radio" name="radioForm{{i}}" value="{{radioOption1[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption1[i]}} </label>
         </div>
         <br>
         <div *ngIf="radioOption2[i] != null">
-          <input type="radio" name="radioForm{{i}}" value="option2" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption2[i]}} </label>
+          <input type="radio" name="radioForm{{i}}" value="{{radioOption2[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption2[i]}} </label>
         </div>
         <br>
         <div *ngIf="radioOption3[i] != null">
-          <input type="radio" name="radioForm{{i}}" value="option3" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption3[i]}} </label>
+          <input type="radio" name="radioForm{{i}}" value="{{radioOption3[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption3[i]}} </label>
         </div>
         <br>
         <div *ngIf="radioOption4[i] != null">
-          <input type="radio" name="radioForm{{i}}" value="option4" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption4[i]}} </label>
+          <input type="radio" name="radioForm{{i}}" value="{{radioOption4[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption4[i]}} </label>
         </div>
       </ng-container>
       <ng-container *ngIf="questionType[i] === 'Multi'">
@@ -47,4 +47,5 @@
 
 
     </div>
+    <button class="button" (click)="save()">Submit</button>
   </div>

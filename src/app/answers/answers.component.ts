@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-answers',
+  templateUrl: './answers.component.html',
+  styleUrls: ['./answers.component.css']
 })
-export class FormComponent implements OnInit {
+export class AnswersComponent implements OnInit {
 
   formArray: Array<string>;
   optionsArray: Array<string>;

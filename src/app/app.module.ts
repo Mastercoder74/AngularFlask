@@ -9,6 +9,8 @@ import { FormComponent } from './form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { EnquiriesListComponent } from './enquiries-list/enquiries-list.component';
+import { FormFillerComponent } from './form-filler/form-filler.component';
+import { AnswersComponent } from './answers/answers.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { EnquiriesListComponent } from './enquiries-list/enquiries-list.componen
     FormsListComponent,
     FormComponent,
     FormBuilderComponent,
-    EnquiriesListComponent
+    EnquiriesListComponent,
+    FormFillerComponent,
+    AnswersComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ export class LandingPageComponent implements OnInit {
   }
   redirectToEnquiries()
   {
-    this.router.navigate(['/enquiries']);
+    this.router.navigate(['/filler']);
   }
 
   ngOnInit(): void {
