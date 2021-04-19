@@ -53,13 +53,13 @@ export class FormComponent implements OnInit {
 
   getFormData()
   {
-
+    this.id = this.route.snapshot.params['id'];
   }
 
   id: string;
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.getFormData();
   }
 
 }
