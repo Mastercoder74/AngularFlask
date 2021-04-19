@@ -96,6 +96,8 @@ export class FormFillerComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.reloadData();
+
     this.getFormsList();
 
     this.getAnswersList();

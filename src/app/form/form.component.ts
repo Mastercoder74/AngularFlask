@@ -61,6 +61,7 @@ export class FormComponent implements OnInit {
       this.http.post(url,{
 
         answerString : this.answerString,
+        formID: this.id
 
       }).toPromise().then(() => {
 
