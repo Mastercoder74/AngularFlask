@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -28,7 +29,7 @@ export class FormComponent implements OnInit {
 
   iValue: number;
 
-  constructor()
+  constructor(private route: ActivatedRoute,)
   {
     this.formArray = [];
     this.optionsArray = [];
@@ -46,6 +47,8 @@ export class FormComponent implements OnInit {
     this.multiOption2 = [];
     this.multiOption3 = [];
     this.multiOption4 = [];
+
+    this.id = '';
   }
 
   getFormData()
@@ -53,7 +56,10 @@ export class FormComponent implements OnInit {
 
   }
 
+  id: string;
+
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
   }
 
 }

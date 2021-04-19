@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forms-list',
@@ -10,7 +11,7 @@ export class FormsListComponent implements OnInit {
 
   dataStorage: any;
 
-  constructor(private http:HttpClient,) { }
+  constructor(private http:HttpClient, private router: Router,) { }
 
   getFormsList()
   {
@@ -28,6 +29,11 @@ export class FormsListComponent implements OnInit {
       // alert(dataInfo[0].formArray[0])
 
     })
+  }
+
+  redirectToForm(id: string)
+  {
+    this.router.navigate(['/form', id]);
   }
 
   ngOnInit(): void {

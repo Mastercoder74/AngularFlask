@@ -6,9 +6,11 @@
 <table class="mid main-table center">
   <th>Form Number</th>
   <th>MongoDB ID</th>
+  <th>Action</th>
   <tr *ngFor="let data of dataStorage, let i = index">
     <td>{{i+1}}</td>
     <td>{{data._id.$oid}}</td>
+    <td><button class="button" (click)="redirectToForm(data._id.$oid)">View</button></td>
   </tr>
 </table>
 </div>
