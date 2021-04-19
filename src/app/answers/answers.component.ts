@@ -50,6 +50,8 @@ export class AnswersComponent implements OnInit {
     this.multiOption4 = [];
 
     this.id = '';
+
+    this.formID = '';
   }
 
   dataStorage: any;
@@ -67,11 +69,32 @@ export class AnswersComponent implements OnInit {
       })
   }
 
-  getFormData()
+  formID: string;
+
+  getAnswersData()
   {
     this.id = this.route.snapshot.params['id'];
 
-    let url = 'http://127.0.0.1:5000/user/' + this.id;
+    let url0 = 'http://127.0.0.1:5000/answer/' + this.id;
+
+    this.http.get(url0,{
+
+    }).toPromise().then((data) => {
+
+      var dataInfo = JSON.parse(JSON.stringify(data));
+
+      this.formID = dataInfo.formID;
+
+      this.answerString = dataInfo.answerString;
+
+      this.getFormData();
+
+    })
+  }
+
+  getFormData()
+  {
+    let url = 'http://127.0.0.1:5000/user/' + this.formID;
 
     this.http.get(url,{
 
@@ -103,7 +126,7 @@ export class AnswersComponent implements OnInit {
   id: string;
 
   ngOnInit(): void {
-    this.getFormData();
+    this.getAnswersData();
   }
 
 }

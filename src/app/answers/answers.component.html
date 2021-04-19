@@ -1,51 +1,31 @@
 <div class="mid">
-  <h1>FORM</h1>
+  <h1>GUEST ANSWER</h1>
 
-  <div *ngFor="item of formArray, let i = index" class="questionBox">
+  <div *ngFor="let item of formArray, let i = index" class="questionBox">
     <p>{{questionType[i]}} Question</p>
     <label for="shortAnswers">Question {{i + 1}}: </label>
 
     <ng-container *ngIf="questionType[i] === 'Short'">
       <p>{{inputString[i]}}</p>
-      <input type="text" [(ngModel)]="answerString[i]">
+      <input class="mid-answer" type="text" [(ngModel)]="answerString[i]" readonly>
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Long'">
       <p>{{inputString[i]}}</p>
-      <textarea type="text" [(ngModel)]="answerString[i]"></textarea>
+      <textarea class="mid-answer" type="text" [(ngModel)]="answerString[i]" readonly></textarea>
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Radio'">
       <p>{{inputString[i]}}</p>
       <br>
       <br>
-      <div *ngIf="radioOption1[i] != null">
-        <input type="radio" name="radioForm{{i}}" value="{{radioOption1[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption1[i]}} </label>
-      </div>
-      <br>
-      <div *ngIf="radioOption2[i] != null">
-        <input type="radio" name="radioForm{{i}}" value="{{radioOption2[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption2[i]}} </label>
-      </div>
-      <br>
-      <div *ngIf="radioOption3[i] != null">
-        <input type="radio" name="radioForm{{i}}" value="{{radioOption3[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption3[i]}} </label>
-      </div>
-      <br>
-      <div *ngIf="radioOption4[i] != null">
-        <input type="radio" name="radioForm{{i}}" value="{{radioOption4[i]}}" [(ngModel)]="answerString[i]"><label for="option1">{{radioOption4[i]}} </label>
-      </div>
+      <input class="mid-answer" type="text" [(ngModel)]="answerString[i]" readonly>
     </ng-container>
     <ng-container *ngIf="questionType[i] === 'Multi'">
       <p>{{inputString[i]}}</p>
       <br>
       <br>
-      <select [(ngModel)]="answerString[i]" multiple>
-        <option value="{{multiOption1[i]}}">{{multiOption1[i]}}</option>
-        <option value="{{multiOption2[i]}}">{{multiOption2[i]}}</option>
-        <option value="{{multiOption3[i]}}">{{multiOption3[i]}}</option>
-        <option value="{{multiOption4[i]}}">{{multiOption4[i]}}</option>
-      </select>
+      <input class="mid-answer" type="text" [(ngModel)]="answerString[i]" readonly>
     </ng-container>
 
 
   </div>
-  <button class="button" (click)="save()">Submit</button>
 </div>
